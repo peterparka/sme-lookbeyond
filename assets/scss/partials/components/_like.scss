@@ -1,0 +1,23 @@
+.vortex-p-like {
+
+	&:after {
+		content: 'Like This';
+		font-size: 16px;
+	}
+
+	.vortex-p-like-counter {
+		font-size: 0;
+		display: none;
+	}
+
+	&.vortex-p-like-active {
+
+		&:after {
+			content: 'Liked';
+		}
+
+		.vortex-p-like-counter {
+			//font-size: 16px;
+		}
+	}
+}

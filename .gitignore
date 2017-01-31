@@ -1,0 +1,36 @@
+# OS
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Composer
+composer.phar
+composer.lock
+/vendor
+
+# Sass
+.sass-cache
+node_modules
+scss-lint-report.xml
+
+# Node
+/node_modules
+/npm-debug.log
+
+# Hide generated files
+/public/wp-content/themes/lookbeyond/_*
+/public/wp-content/themes/lookbeyond/*.css
+!/public/_img # This is not ignored.
+/public/var/*
+/public/packages/*
+
+# WordPress
+/public/wp-config.php
+/public/wp-content/uploads
+
+# Bower
+assets/bower-packages/*
+bower_components

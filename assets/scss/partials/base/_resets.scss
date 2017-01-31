@@ -1,0 +1,44 @@
+
+// =============================================================================
+// Base styles
+// =============================================================================
+
+body {
+	background: $base-background-color;
+	color: $base-font-color;
+}
+
+// sort general image space issues
+img {
+	display: block;
+}
+
+// Box sizing reset
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+a {
+	@extend %unstyled-anchor;
+}
+
+.size-medium {
+	height: auto !important; // overrite wordpress
+}
+
+
+.image-container {
+	@include centered-image-container(100%, 400px);
+
+	img {
+		max-width: 100%;
+
+		@include max-breakpoint(medium) {
+			max-height: none;
+		}
+	}
+}

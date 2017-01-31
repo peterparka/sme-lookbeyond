@@ -1,0 +1,120 @@
+// custom fade in on scroll animation classes
+.os-animation{
+  opacity: 0;
+}
+
+.os-animation.animated{
+    opacity: 1;
+}
+
+
+// main animation
+.fadeIn {
+  @include fadeIn($duration: 1s, $function: ease-out);
+}
+
+.fadeInUp {
+  @include fadeInUp($duration: .7s, $function: ease-out);
+}
+
+.fadeInDown {
+  @include fadeInDown($duration: .7s, $function: ease-out);
+
+}
+
+.fadeInLeft {
+  @include fadeInLeft($duration: .7s, $function: ease-out);
+}
+
+.fadeInRight {
+  @include fadeInRight($duration: .7s, $function: ease-out);
+
+}
+
+
+
+.slideInLeft{
+  @include slideInLeft($duration: 1.5s, $function: ease);
+}
+
+.slideInRight{
+  @include slideInRight($duration: 1.5s, $function: ease);
+}
+
+.slideInUp{
+  @include slideInUp($duration: .8s, $function: ease-out);
+}
+
+.slideInDown{
+  @include slideInDown($duration: .8s, $function: ease-out);
+}
+
+.zoomIn{
+  @include zoomIn($duration: 1s, $function: ease-out);
+}
+
+
+
+
+
+
+// SLOW ZOOM IN ANIMATION
+@include keyframes(zoomSlow) {
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+   @include transform(scale(1.08));
+  }
+  100% {
+   @include transform(scale(1.12));
+  }
+}
+
+@mixin zoomSlow($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomSlow);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+.zoomSlow {
+  @include zoomSlow($duration: 20s, $function: ease-in-out);
+}
+
+
+@keyframes anim-effect-ripple {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.4, 0.4, 1);
+    transform: scale3d(0.4, 0.4, 1);
+  }
+  80% {
+    box-shadow: inset 0 0 0 2px rgba(255,198,39,.7);
+    opacity: 0.1;
+  }
+  100% {
+    box-shadow: inset 0 0 0 2px rgba(255,198,39,.9);
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+  }
+}
+
+
+// custom fade in
+
+
+@keyframes bodyFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

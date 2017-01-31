@@ -1,0 +1,25 @@
+// =============================================================================
+//  Stops the text/element being highlighted
+//  (good for accordions, or where text is being clicked a lot)
+//
+//  @author github.com/developerant ;-) x
+//  @param {Bool} $extend (true) - extend or include this pattern
+// =============================================================================
+
+@mixin unselectable($extend: true) {
+	@if $extend {
+		@extend %unselectable;
+	}
+	@else {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+}
+
+%unselectable {
+	@include unselectable($extend: false);
+}

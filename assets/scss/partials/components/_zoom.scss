@@ -1,0 +1,66 @@
+
+.zoom {
+	cursor: pointer;
+
+	.btn--zoom {
+		@extend .btn;
+	}
+}
+
+.popup {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+	background: rgba(black, 0.3);
+	z-index: 999;
+
+	.container--zoomed-image {
+		// position: relative;
+		// background: $dark-gray;
+		// border: 1px solid white;
+		// max-width: 90%;
+		// max-height: 90%;
+		// margin-left: auto;
+		// margin-right: auto;
+		// overflow: hidden;
+		// height: 0;
+  //   	padding-top: 50%;
+  //   	top: 10%;
+
+		// @include breakpoint(medium) {
+		// 	max-width: 70%;
+		// }
+
+		// @include breakpoint(large) {
+		// 	max-width: 960px;
+		// }
+
+		img {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			max-width: 100%;
+			max-height: 100%;
+			margin: auto;
+			overflow: auto;
+		}
+
+		.btn--close {
+			position: absolute;
+			top: 0;
+			right: $space;
+			outline: 0;
+			border: 0;
+		}
+	}
+}
+
+.image-container img {
+	width: 100%;
+}

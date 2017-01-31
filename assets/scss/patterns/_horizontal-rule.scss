@@ -1,0 +1,16 @@
+// =============================================================================
+//  <hr> Horizontal Rule / Thematic Break - Cross browser solution
+//
+//  @author github.com/developerant ;-) x
+//  @param {Hex} $color (#000000) - color of the hr
+//  @param {Px} $size (1px) - height of the hr
+// =============================================================================
+
+@mixin hr($color: #000, $size: 1px) {
+	margin-top: 0;
+	border: 0;
+	border-bottom: solid $size $color;
+	color: $color;
+	background-color: $color;
+	clear: both;
+}

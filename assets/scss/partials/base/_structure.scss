@@ -1,0 +1,139 @@
+// **************************************** //
+// html, body, .wrapper, section, .row
+// html, body, .wrapper, section, .row-no-max
+
+html, body {
+	position: relative;
+	background-color: #fff;
+}
+
+// site main
+main {
+	position: relative;
+	margin-bottom: 0;
+	padding-top: $mb-nav-height;
+
+	@include breakpoint(large) {
+		padding-top: $nav-height;
+	}
+}
+
+// normal row // site widths are set here using the row class
+.row {
+	width: 95%;
+	margin: 0 auto;
+
+	@include breakpoint(medium) {
+		width: 88%;
+	}
+
+	@include breakpoint(large) {
+		width: 82%;
+	}
+
+	@include breakpoint(xlarge) {
+		width: 80%;
+		max-width: 1800px;
+	}
+
+}
+
+
+// row no max width
+.row-no-max {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	height: inherit;
+	// remove gutter padding from gridlex
+	[class*="col-"], .col {padding: 0;}
+}
+
+.xpad-top {
+  padding-top: $space * 2;
+
+  @include breakpoint(medium) {
+      padding-top: $space * 5;
+  }
+
+}
+
+
+// Section wrapper
+section {
+	padding: $space *2 0;
+	position: relative;
+
+	header {
+
+		h4 {
+			font-weight: 600;
+			line-height: 1.4;
+			font-size: responsive 22px 40px;
+
+			@include breakpoint(medium) {
+				max-width: 70%;
+				margin: 0 auto;
+			}
+		}
+
+		p {
+		  font-size: responsive 18px 28px;
+
+			@include breakpoint(large) {
+					max-width: 60%;
+					margin: 0 auto;
+				}
+
+		}
+
+	}
+
+// home page alternating block specific styles
+	&.alt-blocks {
+		border-top: 5px solid #fff;
+
+		> article > header {
+				padding: $space $space/2;
+		}
+
+		> article > div:nth-child(2) {
+			min-height: 350px;
+			position: relative;
+
+		@include breakpoint(large) {
+					min-height: 550px;
+			}
+
+		@include breakpoint(xlarge) {
+					min-height: 60vh;
+			}
+
+		}
+
+	}
+
+
+	&.z-top	{
+		// increase by 1
+		z-index: 5;
+	}
+
+	// desktop section styles
+  	@include breakpoint(large) {
+        		padding: $space *3 0;
+      }
+
+	// xl desktop section styles
+			@include breakpoint(xlarge) {
+						padding: $space *4 0;
+			}
+	}
+
+img {
+	display: block;
+}
+
+.grid-image {
+	width: 100%;
+}

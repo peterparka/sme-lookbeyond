@@ -1,0 +1,158 @@
+
+.align-left ul li {
+  text-align: left;
+  font-size: calc(18px + 10 * ((100vw - 360px) / 1540));
+  font-family: "mr-eaves-xl-modern",sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.article {
+
+  .post-infographic .image-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    tranform: none;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .image-container {
+    height: 250px;
+
+    @include breakpoint(medium) {
+      height: 400px;
+    }
+  }
+
+  .hero {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: $space;
+    min-height: 300px;
+    img {
+      width: 120%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include breakpoint(large) {
+          width: 100%;
+      }
+    }
+  }
+
+  article:first-child {
+
+
+    padding-top: $mb-nav-height;
+
+    @include breakpoint(large) {
+          padding-top: $space*2;
+    }
+  }
+
+  article {
+    max-width: 660px;
+    margin: 0 auto $space*2 auto;
+    padding: 0 $space/2 ;
+
+    img {
+      display: block;
+      border-radius: $radius;
+      width:  auto; // !important;
+      height: auto; // !important;
+
+      @include breakpoint(small) {
+        // width: auto !important;
+        // height: auto !important;
+      }
+    }
+
+    .infographic-wrap {
+      border: 2px solid $light-gray;
+    }
+
+  >  * {
+      margin-bottom: $space;
+    }
+
+    h3 {
+      color: $lb-c2;
+    }
+
+    video, object, iframe {
+      width: 100%;
+    }
+    p {
+      font-weight: 400;
+      color: $dark-gray;
+      font-size: responsive 16px 24px;
+      lower-font-range: 360px;
+      upper-font-range: 1000px;
+      line-height: 1.5;
+
+    }
+
+    .tags-wrap {
+      padding: 0;
+      max-width: 800px;
+
+      div > div {
+        margin:$space/4 0;
+
+        @include breakpoint(small) {
+          margin: 0 $space/4;
+        }
+
+      }
+      div > div:first-child {
+
+        @include breakpoint(small) {
+          margin-left: 0;
+        }
+      }
+    }
+
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0;
+      padding: 0  $space/4;
+      display: flex;
+      align-items: center;
+      min-width: 45px;
+
+      &:first-child {
+        padding-left: 0;
+
+        h5 {
+          margin-bottom: 0;
+        }
+
+      }
+
+      img {
+        cursor: pointer;
+        max-width: 30px;
+        margin-bottom: 0;
+        opacity: .8;
+        width: 100%;
+        @include transition();
+
+        &:hover {
+          opacity: 1;
+
+        }
+      }
+    }
+  }
+}

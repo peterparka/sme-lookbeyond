@@ -1,0 +1,34 @@
+// =============================================================================
+//  Center vertically and/or horizontally an absolutely positioned element
+//
+//  @param {xy} $xy
+// =============================================================================
+
+@mixin center($xy: xy) {
+
+	@if $old-ie {
+		position: static;
+		top: 0;
+
+	} @else {
+
+		@if $xy == xy {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			bottom: auto;
+			right: auto;
+			transform: translate(-50%, -50%);
+		} @else if $xy == x {
+			position: absolute;
+			left: 50%;
+			right: auto;
+			transform: translateX(-50%);
+		} @else if $xy == y {
+			position: absolute;
+			top: 50%;
+			bottom: auto;
+			transform: translateY(-50%);
+		}
+	}
+}

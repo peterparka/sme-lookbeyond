@@ -1,0 +1,87 @@
+.prefooter {
+position: relative;
+padding: 0;
+
+
+article.col  {
+      position: relative;
+      padding-top: $space;
+      overflow: hidden;
+      min-height: 260px;
+
+      @include breakpoint(small) {
+        min-height: 300px;
+      }
+      
+      @include breakpoint(large) {
+        min-height: 350px;
+      }
+
+      h4, p, h5{
+        padding: 0 $space;
+      }
+
+      h4 {
+        margin-bottom: $space;
+      }
+
+      .bg-image {
+        min-height: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      .arrow {
+        cursor: pointer;
+        fill: #fff;
+        margin-left: $space;
+        stroke-width: 3px;
+        stroke: $lb-c3;
+        width: 40px;
+        @include transition();
+        position: absolute;
+        bottom: $space;
+
+        &:hover {
+           fill: $lb-c3;
+        }
+      }
+
+  }
+
+img {
+    display: block;
+    left: 0;
+    bottom: 0;
+    position:relative;
+    width: 100%;
+
+    }
+
+
+  h5 {
+    align-items: center;
+    display: flex;
+    margin-bottom: $space/2;
+    padding-top: 10px;
+
+    img {
+        display: flex;
+        max-width: 8%;
+        padding-right: 10px;
+        position: relative;
+        top: 0;
+      }
+  }
+
+}
+
+.prefooter > div > article:nth-child(3) {
+  p {
+    font-size: responsive 14px 18px;
+  }
+
+  // @include breakpoint(large) {
+  //   padding-top: $space*1.5;
+  // }
+}

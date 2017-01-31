@@ -1,0 +1,245 @@
+
+/**
+ * Circle Styles
+ */
+
+ .circle-wrap {
+   margin-top: $space;
+
+   @include breakpoint(medium) {
+        margin-top: 0;
+   }
+ }
+
+.circle {
+  position: relative;
+  display: block;
+  background-color: transparent;
+  color: #222;
+  text-align: center;
+  top: 0;
+  margin-bottom: $space;
+  max-height: 80px;
+
+  @include breakpoint(medium) {
+    margin-bottom: 0;
+    top: 150px;
+    margin-top: -100px;
+    max-height: 400px;
+  }
+}
+
+.circle:last-child() {
+      margin-bottom: 0;
+}
+
+.circle:after {
+  display: block;
+  padding-bottom: 0;
+  width: 100%;
+  height: 70px;
+  border-radius: 2%;
+  background-color: $light-gray;
+  content: "";
+  box-shadow: 0px 3px 0px $gray;
+  margin:0 auto;
+
+  @include breakpoint(small) {
+    padding-bottom: 90%;
+    border-radius: 50%;
+    width: 90%;
+    height: 0;
+  }
+
+}
+
+.circle__inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.circle__wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.circle__content {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  padding: 0 $space/3;
+
+    h5 {
+      font-size: responsive 18px 20px;
+    }
+
+  @include breakpoint(small) {
+    padding: $space;
+    display: table-cell;
+    h5{
+      font-size: responsive 16px 18px;
+    }
+  }
+
+  img {
+    height: 70px;
+    padding-left: $space/1.5;
+
+    @include breakpoint(small) {
+      max-width: 50%;
+      margin: 0 auto;
+      padding: 0;
+      height: auto;
+    }
+  }
+
+  h5 {
+    color: $medium-gray;
+    margin-bottom: 0;
+    padding-left: 12%;
+
+    @include breakpoint(small) {
+      padding: 0;
+    }
+  }
+
+  .p-large {
+    padding-bottom: $space;
+  }
+
+  @include breakpoint(small) {
+    padding: $space/2;
+  }
+}
+
+.circle-sm {
+  position: absolute;
+  border: 5px solid #fff;
+  height: 75px;
+  width: 75px;
+  display: block;
+  border-radius: 100%;
+
+  img {
+    display: block;
+    width: 80%;
+    margin: 10% 10%;
+}
+
+  @include breakpoint(medium) {
+    height: 80px;
+    width: 80px;
+  }
+
+  @include breakpoint(large) {
+    height: 105px;
+    width: 105px;
+    border: 7px solid #fff;
+  }
+
+  @include breakpoint(xlarge) {
+    height: 110px;
+    width: 110px;
+  }
+}
+
+.circle-sml {
+  position: absolute;
+  border: 5px solid #fff;
+  height:80px;
+  width: 80px;
+  display: block;
+  border-radius: 100%;
+
+  img {
+    display: block;
+    width: 80%;
+    margin: 10% 10%;
+  }
+
+  @include breakpoint(medium) {
+    height: 95px;
+    width: 95px;
+  }
+
+  @include breakpoint(large) {
+    height: 115px;
+    width: 115px;
+    border: 7px solid #fff;
+  }
+
+  @include breakpoint(xlarge) {
+    height: 125px;
+    width: 125px;
+  }
+}
+
+.circle-md {
+  position: absolute;
+  border: 5px solid #fff;
+  height: 90px;
+  width: 90px;
+  display: block;
+  border-radius: 100%;
+
+  img {
+    display: block;
+    width: 80%;
+    margin: 10% 10%;
+  }
+
+  @include breakpoint(medium) {
+    height: 115px;
+    width: 115px;
+  }
+
+  @include breakpoint(large) {
+    height: 145px;
+    width: 145px;
+    border: 7px solid #fff;
+  }
+
+  @include breakpoint(xlarge) {
+    height: 175px;
+    width: 175px;
+  }
+
+}
+
+div:nth-child(1) .circle-sml {
+  top: 8%;
+  left: 62%;
+}
+div:nth-child(2) .circle-sm {
+  top: 25%;
+  left: 10%;
+}
+div:nth-child(3) .circle-md {
+  top: 5%;
+  left: 28%;
+}
+div:nth-child(4) .circle-sm {
+  top: 45%;
+  left: 28%;
+}
+div:nth-child(5) .circle-md {
+  top: 32%;
+  left:48%;
+}
+div:nth-child(6) .circle-sm {
+  top: 70%;
+  left: 18%;
+}
+div:nth-child(7) .circle-sm {
+  top: 58%;
+  left: 73%;
+}
+div:nth-child(8) .circle-md {
+  top: 66%;
+  left: 44%;
+}

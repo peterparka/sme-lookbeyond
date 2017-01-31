@@ -1,0 +1,645 @@
+
+// // =============================================================================
+// // Forms
+// // =============================================================================
+
+// @import "checkboxes";
+// @import "file-uploads";
+// @import "selects";
+
+$text-inputs: 'input[type="text"], input[type="email"], input[type="password"], input[type="comments"], textarea';
+
+
+
+
+// SETTING THE BORDER COLOR FOR THE FOCUS STATE FOR REQUIRED AND VALID INPUTS
+input[type="text"]:valid:focus,
+input[type="text"][required]:focus,
+input[type="password"][required]:focus,
+input[type="number"][required]:focus,
+input[type="email"][required]:focus,
+input[type="comments"][required]:focus,
+textarea:focus {
+
+	border-color: $lb-c1;
+
+}
+
+// SETS THE LABEL PLACEHOLDER:BEFORE PSEUDO CLASS STYLES WHILE INPUT IS ON FOCUS
+input[type="text"]:valid:focus + label[placeholder]:before,
+input[type="text"][required]:focus + label[placeholder]:before,
+input[type="password"][required]:focus,
+input[type="number"][required]:focus,
+input[type="email"][required]:focus,
+input[type="comments"][required]:focus,
+textarea:focus {
+
+	color: $lb-c1;
+
+}
+
+
+// SETS THE HEIGHT FOR ALL INPUT OPTIONS
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="search"] {
+
+	height: 60px;
+	width: 100%;
+	padding-left: $space/2;
+	margin-bottom: $space;
+
+		// @include breakpoint(small) {
+		// 	width: 500px;
+		// }
+
+}
+
+// SETS THE HEIGHT FOR ALL INPUT OPTIONS
+input[id="comments"] {
+
+
+	padding-bottom: 200px;
+	width: 100%;
+
+	margin-bottom: $space;
+
+}
+
+// SETS THE GENERAL STYLES FOR ALL INPUT OPTIONS PLUS TEXTAREA
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+input[type="comments"],
+textarea {
+
+    resize: none;
+    outline: none;
+
+	// padding: 0 20%;
+    border: 2px solid $light-gray;
+
+    color: $medium-gray;
+
+    @include transition();
+
+}
+
+input[id="comments"],
+textarea {
+
+    resize: none;
+    outline: none;
+
+	  padding-top: 5%;
+    border: 2px solid $light-gray;
+
+    color: $medium-gray;
+
+    @include transition();
+
+}
+
+input[type="checkbox"] {
+
+	margin-top: 2px;
+	margin-right: 15px;
+    float: left;
+}
+
+.checkbox input[type="checkbox"] {
+
+	margin-top: 3px;
+
+}
+
+.checkbox ~ h5,
+.checkbox ~ p,
+input[type="checkbox"] ~ h5,
+input[type="checkbox"] ~ p {
+
+	@include breakpoint(large) {
+
+		margin-left: 30px;
+
+	}
+
+}
+
+input[type="checkbox"] + h3,
+input[type="checkbox"] + h4 {
+
+	margin-bottom: $space/2;
+	color: $base-font-color;
+
+}
+
+input[type="submit"] {
+
+	height: 50px;
+	background-color: transparent;
+
+	border-color: $lb-c1;
+
+	color: $lb-c1;
+
+}
+
+label {
+
+	@extend %paragraph-text;
+    display: block;
+    // @include rem('font-size', $font-xs);
+    color: $dark-gray;
+    padding-bottom: 5px;
+		font-weight: 300;
+
+}
+
+
+form {
+
+	.register-form li {
+
+		.p-xsmall {
+			clear: both;
+		}
+
+		.dfield input {
+			width: 100%;
+		}
+
+		.step-content {
+
+			@include transition();
+
+			padding-left: 5px;
+			overflow-y: hidden;
+
+			.btn:not(.confirm-to-pay) {
+
+				display: none;
+
+			}
+
+			.btn.confirm-to-pay {
+
+				max-width: 100%;
+				width: 100%;
+				padding: 0;
+				font-size: 12px;
+
+			}
+
+			@include breakpoint(small) {
+
+				height: 40px;
+
+				.btn:not(.confirm-to-pay) {
+
+					display: inline-block;
+
+				}
+
+				.btn.confirm-to-pay {
+
+					max-width: auto;
+					width: auto;
+					padding: 0 20px;
+					// @include rem('font-size', $base-font-size);
+
+				}
+
+			}
+
+			@include breakpoint(medium) {
+
+				height: 60px;
+
+			}
+
+		}
+
+		&.active {
+
+			.step-content {
+
+				@include transition();
+
+				height: auto;
+
+			}
+
+		}
+
+	}
+
+	.register-form li:not(.active) {
+
+		@include breakpoint(small) {
+
+			&::before {
+
+				background-color:$gray;
+
+			}
+
+			h3, h3 span, h3 i {
+
+				color: $gray;
+
+			}
+
+			&:hover {
+
+				@include transition();
+
+				&::before {
+
+					@include transition();
+
+					background-color: $lb-c1;
+
+				}
+
+				h3 {
+
+					@include transition();
+					color: $base-font-color;
+
+				}
+
+				h3 span {
+
+					@include transition();
+					color: $medium-gray;
+
+				}
+
+				h3 i {
+
+					color: $lb-c1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+	hr {
+
+		margin: $space*2 0;
+
+	}
+
+	h3 {
+
+		position: relative;
+		// @include rem('font-size', $font-sm);
+		padding-right: 20px;
+
+		@include breakpoint(large) {
+
+			// @include rem('font-size', $font-m);
+			padding-right: 0;
+
+			&:hover {
+
+				cursor: pointer;
+
+			}
+
+		}
+
+	}
+
+	h3 i {
+
+		position: absolute;
+		right: 0; top: 0;
+
+		&.nc-icon-outline {
+
+			display: none;
+
+			@include breakpoint(small) {
+
+				display: block;
+
+			}
+
+		}
+
+		@include breakpoint(large) {
+
+			position: static;
+
+		}
+
+		@include transition();
+
+		float: right;
+		color: $lb-c1;
+
+	}
+
+	h3 .small, h4 .small {
+
+		color:$medium-gray;
+		vertical-align: middle;
+
+	}
+
+	h3 span, h4 span {
+
+		display: block;
+
+		@include breakpoint(large) {
+
+			display: inline;
+
+		}
+
+	}
+
+	h4, p {
+
+		margin-bottom: $space;
+
+	}
+
+	h5 {
+
+		margin-bottom: $space/2;
+
+	}
+
+	p {
+
+		color: $medium-gray;
+
+		&.small {
+
+			font-family: 'HelveticaNeueLTStd-Bd';
+
+		}
+
+	}
+
+	.active {
+
+		i {
+
+			color:$gray;
+
+		}
+
+	}
+
+	.btn a {
+
+		i {
+
+			color: $lb-c1;
+
+		}
+
+		&:hover {
+
+			color: $lb-c1;
+
+		}
+
+	}
+
+}
+
+.opt-in {
+
+	.small {
+
+		font-family: 'HelveticaNeueLTStd-Roman', Helvetica, Arial, sans-serif;
+
+	}
+
+}
+
+.open-close-receptions {
+
+	border-top: thin solid $lb-c1;
+	border-bottom: thin solid transparent;
+	margin: $space*2 0;
+	padding: 0;
+
+	.receptions-info {
+
+		@include transition();
+		opacity: 0;
+
+	}
+
+	&.active {
+
+		@include transition();
+
+		height: auto;
+		min-height: 275px;
+
+		border-bottom-color: $lb-c1;
+		padding: $space*2 0;
+
+		.receptions-info {
+
+			@include transition();
+			transition-delay: .25s;
+			opacity: 1;
+
+		}
+
+	}
+
+}
+
+.expand-options {
+
+	@include transition();
+	height: 0;
+	min-height: auto;
+	overflow: hidden;
+
+}
+
+.preconf-options {
+
+
+	font-family: 'Flexo-Medium';
+	// @include rem('font-size', $font-xs);
+
+	input[type="radio"] {
+
+		margin-right: $space/2;
+		margin-bottom: $space/2;
+
+	}
+
+	@include breakpoint(large) {
+
+		padding-left: $space*1.5;
+
+	}
+
+	&.active {
+
+		@include transition();
+
+		height: auto;
+		min-height: 100px;
+
+		padding-top: $space/2;
+
+	}
+
+}
+
+.review-edit {
+
+	.edit {
+
+		@include breakpoint(large) {
+
+			&:hover {
+
+				cursor: pointer;
+
+			}
+
+		}
+
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="number"],
+	input[type="email"],
+	input[type="search"]
+	input[type="comments"] {
+
+		@include transition();
+
+		height: 30px;
+
+		// padding: 0 120px;
+		padding-left: 0;
+		border: none;
+
+		color: $base-font-color;
+
+		&:last-child {
+
+			margin-bottom: 0;
+
+		}
+
+		&.active {
+
+			@include transition();
+
+			height: 40px;
+			width: 100%;
+
+
+
+			margin-bottom: $space;
+
+			resize: none;
+			outline: none;
+
+			padding: 0 120px;
+			border: 2px solid $light-gray;
+
+			color: $medium-gray;
+
+			&:focus {
+
+				border-color: $lb-c1;
+
+			}
+
+		}
+
+	}
+
+}
+
+.register-end {
+
+	@include breakpoint(large) {
+
+		margin-left: $space*2;
+
+	}
+
+}
+
+form + .btn {
+
+	margin-bottom: $space*2;
+
+	@include breakpoint(large) {
+
+		margin-bottom: auto;
+
+	}
+
+}
+
+ol{
+	padding-left: 0;
+
+	> li {
+		width: 100%;
+	}
+}
+
+
+.js-3 {
+	list-style-type: none;
+	max-width: 1600px;
+	position: relative;
+	margin-bottom:40px;
+	background-color: #fff;
+	padding: $space/1.5;
+
+	@include breakpoint(medium) {
+				border: thin solid #ddd;
+					width: 60%;
+					max-width: 600px;
+	}
+
+
+		@include breakpoint(large) {
+					padding: $space $space;
+		}
+
+}
+hr {
+	@include hr($color: $light-gray, $size: 5px)
+}
+section a {
+	margin-top: 20px;
+
+	p:hover {
+		color: $lb-c2;
+	}
+}

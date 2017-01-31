@@ -1,0 +1,68 @@
+
+// =============================================================================
+// Buttons
+// =============================================================================
+
+.btn,
+.page-template-page-contact #fbuilder .pbreak .pbPrevious,
+.page-template-page-contact .pbreak .pbNext,
+.page-template-page-contact .pbSubmit {
+    display: inline-block;
+    min-width: 200px;
+    padding: $space/2;
+    background-color: $lb-c1;
+    border-radius: 4px;
+    box-shadow: 0 6px 0 $lb-c1-dark;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all .2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 4px $lb-c1-dark;
+      transform: translateY(2px);
+    }
+
+    &:active {
+      box-shadow: 0 4px $lb-c1-dark;
+      transform: translateY(2px);
+    }
+
+    &.btn--close {
+      min-width: 0;
+    }
+
+    &.btn--zoom {
+      z-index: 9;
+      position: relative;
+      top: 0;
+      left: 20px;
+      min-width: 0;
+      padding: 10px;
+    }
+}
+
+.scroll-prompt {
+    display: block;
+    padding: $space 0;
+    text-align: center;
+    color: $lb-c3;
+
+    img {
+      max-width: 40px;
+      margin: 0 auto;
+      margin-top: $space/6;
+    }
+}
+
+.play {
+  max-width: 60px;
+  opacity: .9;
+  transition: .3s opacity ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}

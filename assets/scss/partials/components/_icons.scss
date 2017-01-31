@@ -1,0 +1,105 @@
+// icons
+$hamburgerHeight: 30px;
+$hamburgerWidth: 30px;
+
+//hamburger
+.hamburger {
+	  height:$hamburgerHeight;
+    cursor: pointer;
+    transition-property: opacity,-webkit-filter;
+    transition-property: opacity,filter;
+    transition-property: opacity,filter,-webkit-filter;
+    transition-duration: .15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    z-index: 999;
+    position: absolute;
+    right: 1em;
+		outline: none;
+
+//hamburger //hamburger-box
+	.hamburger-box {
+		  float: right;
+	    width: $hamburgerWidth;
+	    height:$hamburgerHeight;
+	    position: relative;
+	    margin-top: 13px;
+
+	    .hamburger-inner,
+	    .hamburger-inner:after,
+	    .hamburger-inner:before {
+		    width: $hamburgerWidth;
+		    height: 4px;
+		    background-color:$lb-c3;
+		    border-radius: 1px;
+		    position: absolute;
+		    transition-property: transform;
+	    	transition-duration: .15s;
+	    	transition-timing-function: ease;
+		}
+
+//hamburger //hamburger-box //hamburger-innner
+		.hamburger-inner {
+			display: block;
+	    	top: 55%;
+
+	    	&:before {
+	    		content: "";
+    			display: block;
+	    		top: -10px;
+
+	    		transition: top .12s .3s cubic-bezier(.33333,.66667,.66667,1),transform .15s cubic-bezier(.55,.055,.675,.19),-webkit-transform .15s cubic-bezier(.55,.055,.675,.19);
+	    	}
+
+	    	&:after {
+	    		content: "";
+    			display: block;
+	    		top: -20px;
+	    		bottom: -10px;
+    		    transition: top .3s .3s cubic-bezier(.33333,.66667,.66667,1),opacity .1s linear;
+	    	}
+		}
+	}
+
+
+//hamburger.is-active
+		&.is-active .hamburger-inner {
+			transition-delay: .32s;
+	        transition-timing-function: cubic-bezier(.215,.61,.355,1);
+	    	-webkit-transform: translate3d(0,-10px,0) rotate(-45deg);
+	    	transform: translate3d(0,-10px,0) rotate(-45deg);
+			background-color: $lb-c4;
+
+		    &:before {
+		    	transition: top .12s .18s cubic-bezier(.33333,0,.66667,.33333),transform .15s .42s cubic-bezier(.215,.61,.355,1),-webkit-transform .15s .42s cubic-bezier(.215,.61,.355,1);
+		    	top: 0;
+		    	transform: rotate(-90deg);
+		    	background-color: $lb-c4;
+
+		    }
+
+		    &:after {
+		    	top: 0;
+		    	transition: top .3s cubic-bezier(.33333,0,.66667,.33333),opacity .1s .27s linear;
+		    	opacity: 0;
+		    }
+    }
+
+
+// hamburger:hover
+
+	&:hover {
+
+	.hamburger-inner {
+			span {
+				background-color:  $lb-c1;
+			}
+		}
+	}
+}

@@ -1,0 +1,162 @@
+
+// filters on explore page
+
+.filters-wrap, .tags-wrap {
+  padding: 0;
+  max-width: 450px;
+
+  @include breakpoint(medium) {
+    padding: 0 22px 0;
+    max-width: 1100px;
+  }
+
+  > div {
+      max-width: 100%;
+      width: 100%;
+
+      @include breakpoint(small) {
+          width: auto;
+      }
+
+
+      &:last-child {
+
+        > div {
+          width: calc(100% - 4px);
+
+          @include breakpoint(small) {
+              margin: $space/6;
+              width: auto;
+          }
+        }
+      }
+    }
+
+  > div > div {
+    padding: $space/6 !important;
+    position: relative;
+    border: 2px solid $gray;
+    color: $gray;
+    margin: 0;
+    border-radius: $radius;
+    cursor: pointer;
+    @include transition();
+    display: flex;
+    align-items: center;
+    margin: 2px;
+    width: calc(50% - 4px);
+    text-align: center;
+    justify-content: center;
+
+    @include breakpoint(small) {
+        margin: $space/6;
+        width: auto;
+    }
+
+    .nc-icon {
+      fill:none;
+    }
+
+    &.selected {
+      background-color: #fff;
+
+      h5 {
+        display: flex;
+        align-items: center;
+        color: $medium-gray;
+      }
+
+      .nc-icon {
+        stroke: $lb-c1;
+      }
+
+    }
+
+    .nc-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      margin-right: 5px;
+      stroke: $gray;
+      stroke-width: 4px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: $medium-gray;
+
+        .nc-icon {
+          stroke: $lb-c1;
+        }
+      }
+
+
+      &.toggle {
+        color: $medium-gray;
+        border-width: 0;
+        img {max-width: 20px; margin-right: $space/3;}
+
+        .tooltip {
+            background: $dark-gray;
+            bottom: 100%;
+            color: #fff;
+            display: block;
+            margin-bottom: $space/6;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            transform: translateY(10px);
+            transition: all .25s ease-out;
+            border-radius: $radius;
+            text-align: center;
+
+            &:before {
+                bottom: -20px;
+                content: " ";
+                display: block;
+                height: 10px;
+                left: 0;
+                position: absolute;
+                width: 100%;
+              }
+
+            &:after {
+               border-left: solid transparent 10px;
+               border-right: solid transparent 10px;
+               border-top: solid #333 10px;
+               bottom: -10px;
+               content: " ";
+               height: 0;
+               left: 50%;
+               margin-left: -13px;
+               position: absolute;
+               width: 0;
+             }
+        }
+
+        &:hover {
+          background: transparent;
+
+          .tooltip {
+              opacity: 1;
+              pointer-events: auto;
+              transform: translateY(0px);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+.tags-wrap {
+
+    > div > div {
+      margin: $space/6;
+      width: auto;
+    }
+}

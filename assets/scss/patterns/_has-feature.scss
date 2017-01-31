@@ -1,0 +1,13 @@
+// =============================================================================
+//  A convenience method for targeting browser features with Modernizr
+//
+//  @author MadeByMany
+//  @param {Bool} $extend (true) - extend or include this pattern
+//  @requires Modernizr.js
+// =============================================================================
+
+@mixin has-feature($feature) {
+	html.#{$feature} & {
+		@content;
+	}
+}

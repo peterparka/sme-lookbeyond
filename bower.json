@@ -1,0 +1,22 @@
+{
+  "name": "counsyl",
+  "version": "0.0.0",
+  "homepage": "https://github.com/golincode/counsyl",
+  "authors": [
+    "Anthony Roberts <aroberts@wearearchitect.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "waypoints": "^4.0.0",
+    "angular": "^1.5.8",
+    "angular-sanitize": "^1.5.8"
+  }
+}

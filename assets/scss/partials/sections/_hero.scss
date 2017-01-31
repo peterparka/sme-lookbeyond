@@ -1,0 +1,205 @@
+
+/////////////////////////////////////////////
+// hero banner
+/////////////////////////////////////////////
+.hero {
+	height: 230px;
+	padding: 0;
+
+	.hero-text {
+		height: inherit;
+		text-align: center;
+
+		h1 {
+			margin-bottom: 0;
+
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	@include breakpoint(medium) {
+		height: 55vh;
+		min-height: $hero-height;
+	}
+}
+
+.hero-alt {
+		padding: $space 0;
+
+		@include breakpoint(small) {
+			padding: $space*2.5 0;
+		}
+
+		.pad-top {
+			padding-top: $space*2;
+		}
+
+		 > div:nth-child(1) {
+			height: inherit;
+			text-align: center;
+
+			h1 {
+				margin-bottom: 0;
+			}
+
+			.p-large, .p-xlarge  {
+
+				color: $medium-gray;
+
+				@include breakpoint(small) {
+					margin-bottom: $space;
+					padding-top: $space;
+				}
+
+				@include breakpoint(medium) {
+					margin-bottom: $space;
+					padding-top: $space*1.5;
+				}
+
+			}
+
+			p, .p-large {
+
+			  max-width: 800px;
+				font-weight: 300;
+				margin:0 auto;
+
+				.p-xlarge {
+					color: $medium-gray;
+				}
+
+			}
+
+		}
+
+		.hero-content {
+
+			li {
+				//@extend %paragraph-text;
+				color: $medium-gray;
+				text-align: left;
+				font-family: "mr-eaves-xl-modern",sans-serif;
+				font-weight: 300;
+				font-size: calc(18px + 4 * ((100vw - 360px) / 1440));
+    			font-style: normal;
+    			-webkit-font-smoothing: antialiased;
+			}
+
+			> ul {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+		}
+
+		> div:nth-child(2) {
+			@include transition();
+			background-color: $lb-c2;
+			bottom: 0;
+			height: $space/3;
+			margin: 0 auto;
+			position: absolute;
+			text-align: left;
+			width: 100%;
+
+			> div {
+				height: inherit;
+				opacity: 0;
+				overflow: hidden;
+				transition: .3s opacity ease;
+			}
+
+			h4 {margin-bottom: $space/2;}
+			p  {margin-bottom:0; font-weight: 400;}
+
+			> a {
+				background-color: $lb-c2;
+				border-radius: $radius $radius 0 0 ;
+				bottom: 0;
+				color:#fff;
+				display: block;
+				margin: 0 auto;
+				padding: $space/3 $space;
+				position: absolute;
+				transition: .5s opacity ease;
+
+			}
+
+			&:hover {
+				height: 100%;
+				@include transition();
+
+				> a {opacity: 0;}
+
+				> div {
+					opacity: 1;
+				}
+
+			}
+
+		}
+
+	}
+
+/////////////////////////////////////////////
+// hero boxes
+/////////////////////////////////////////////
+	.hero-boxes {
+			bottom: 0;
+			height: auto;
+			padding: 0;
+			position: relative;
+			z-index: 6;
+
+		img {
+			height: 100%;
+			width:100%;
+		}
+
+
+		.col {
+			position: relative;
+			top: 0;
+		}
+
+		// box positions
+		.col:nth-child(1) {
+		}
+
+		.col:nth-child(2) {
+			@extend %gradient-lb-c2;
+			display: none;
+			top: 40px;
+
+			@include breakpoint(medium) {
+					display: block;
+			}
+		}
+
+		.col:nth-child(3) {
+			top: 50px;
+
+			@include breakpoint(medium) {
+					display: block;
+					top: 75px;
+			}
+		}
+
+		.col:nth-child(4) {
+				top: 10px;
+		}
+
+		.col:nth-child(5) {
+			@extend %gradient-lb-c3;
+			display: none;
+			top: 40px;
+
+			@include breakpoint(medium) {
+					display: block;
+			}
+
+		}
+
+	}

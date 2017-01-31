@@ -1,0 +1,25 @@
+// =============================================================================
+//  Visually hides elements WITHOUT hiding them from screen readers or crawlers.
+//
+//  @link http://webaim.org/techniques/css/invisiblecontent
+// =============================================================================
+
+@mixin visually-hidden($extend: true) {
+	@if $extend {
+		@extend %visually-hidden;
+	}
+	@else {
+		clip: rect(0 0 0 0);
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+	}
+}
+
+%visually-hidden {
+	@include visually-hidden($extend: false);
+}

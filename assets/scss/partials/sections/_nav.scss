@@ -1,0 +1,250 @@
+//global-nav
+.global-nav {
+	left: 0;
+	padding: 0 $space;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	transition: all .45s ease-in-sine;
+	width: 100%;
+	z-index: 999;
+
+	@include breakpoint(large) {
+		height: $nav-height;
+		left: 0;
+		padding: 0 $space;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+}
+//global-nav  //nav
+nav {
+		height: $mb-nav-height;
+		width: 100%;
+		z-index: 900;
+
+		> span {
+			background-color: $dark-gray;
+			display: block;
+			height: inherit;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+
+			@include breakpoint(large) {
+				background-color: transparent;
+				max-width: 400px;
+				width: 30%;
+			}
+
+		}
+
+			a {
+				display: flex;
+				align-items: center;
+
+				h5 {
+					display: flex;
+				}
+			}
+
+			@include breakpoint(large) {
+					height: $nav-height;
+			}
+		}
+
+nav .logo {
+	transition: .45s all ease;
+	color: $lb-c4;
+
+	h4 {
+		text-transform: uppercase;
+	  font-size: responsive 20px 26px;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: $lb-c3;
+		transition: .45s all ease;
+	}
+}
+
+// hamburger
+nav .hamburger {
+			display: flex;
+			@include breakpoint(large) {
+					display: none;
+			}
+		}
+
+
+//nav // menu
+nav .menu {
+	align-items: space-around;
+	background-color: $lb-c2;
+	height: calc(100vh - 50px);
+	left: 0;
+	opacity:0;
+	padding: 0;
+	position: fixed;
+	top:0px;
+	transform: translateY(-100%);
+	transition: all .45s ease-in-sine;
+	width: 100%;
+	z-index: -1;
+
+		@include breakpoint(large) {
+					background-color: $dark-gray;
+					height: inherit;
+					margin: 0 auto;
+					max-width: 500px;
+					opacity: 1;
+					position: relative;
+					top: 0;
+					transform: translateY(0);
+					width: 50%;
+
+		}
+//global-nav //nav // menu //a
+	a {
+		color: #fff;
+
+		&:at-least(2) {
+			height: calc(50vh - 25px);
+		}
+
+		&:at-least(3) {
+			height: calc(33.33vh - 16.66px);
+		}
+
+		&:at-least(4) {
+			height: calc(25vh - 12.5px);
+		}
+
+		&:nth-child(1) {background-color: $lb-c1;}
+
+		&:nth-child(2) {background-color: $lb-c2; color: $lb-c4;}
+
+		&:nth-child(3) {background-color: $lb-c3; color: $lb-c2;}
+
+		&:nth-child(4) {background-color: $lb-c4;}
+
+//global-nav //nav // menu //a //span
+		span {
+			font-size: responsive 40px 70px;
+			font-weight: bold;
+			upper-font-range:768px;
+		}
+// a large breakpoint
+		@include breakpoint(small) {
+			&:at-least(2) {
+				height: calc(100vh - 50px);
+			}
+
+			&:at-least(3) {
+				height: calc(100vh - 50px);
+			}
+
+			&:at-least(4) {
+				height: calc(100vh - 50px);
+			}
+
+		}
+
+// a large breakpoint
+		@include breakpoint(large) {
+			align-items: center;
+			background-color: $dark-gray;
+			color: #fff;
+			display: flex;
+			height: inherit;
+			justify-content: center;
+			position: relative;
+			transition: background-color .4s ease-in .2s;
+			width: 25%;
+
+			&:at-least(2) {
+				height: inherit;
+			}
+
+			&:at-least(3) {
+				height: inherit;
+			}
+
+			&:at-least(4) {
+				height: inherit;
+			}
+			&:nth-child(1) {background-color: $dark-gray; color: #fff}
+
+			&:nth-child(2) {background-color: $dark-gray; color: #fff;}
+
+			&:nth-child(3) {background-color: $dark-gray; color: #fff;}
+
+			&:nth-child(4) {background-color: $dark-gray; color: #fff;}
+
+			&:nth-child(1):before {background-color: $lb-c1;}
+
+			&:nth-child(2):before {background-color: $lb-c2;}
+
+			&:nth-child(3):before {background-color: $lb-c3;}
+
+			&:nth-child(4):before {background-color: $lb-c4;}
+
+				span {
+					font-size: responsive 16px 18px;
+					font-weight: normal;
+				}
+
+				&:before {
+					content:'';
+					display: block;
+					height: 8px;
+					left: 0;
+					position: absolute;
+					top: 0;
+					transition: height .4s ease-in-out-quart;
+					width: 100%;
+				}
+
+				&:hover {
+					background-color:#272727;
+
+					&:before {
+						height: 14px;
+					}
+
+				}
+
+			}
+			// end large breakpoint
+
+		}
+
+	}
+
+//global-nav  - is active states
+.global-nav {
+		transition: all .45s ease-in-sine;
+
+		&.is-active  {
+			transition: all .45s ease-in-sine;
+
+			.menu {
+				opacity: 1;
+				top: $mb-nav-height;
+				transform: translateY(0);
+				transition: all .45s ease-in-sine;
+			}
+
+			@include breakpoint(large) {
+				.menu {
+					top: 0;
+				}
+			}
+		}
+	}

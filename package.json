@@ -1,0 +1,50 @@
+{
+  "name": "project_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SFArchitect/project_template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SFArchitect/project_template/issues"
+  },
+  "homepage": "https://github.com/SFArchitect/project_template",
+  "dependencies": {
+    "express": "4.13.1",
+    "express-handlebars": "2.0.1",
+    "del": "^1.2.0",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "1.0.0",
+    "gulp-bower": "0.0.10",
+    "gulp-cache": "^0.2.8",
+    "gulp-concat": "^2.5.2",
+    "gulp-if": "^1.2.5",
+    "gulp-inject": "^1.3.1",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.1.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-svgfallback": "^3.0.2",
+    "gulp-svgmin": "^1.1.2",
+    "gulp-svgstore": "^5.0.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "run-sequence": "^1.1.0",
+    "gulp-rucksack": "^0.1.3",
+    "yargs": "^3.18.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.1",
+    "gulp-jshint": "^1.10.0",
+    "gulp-sass-lint": "*",
+    "gulp-size": "^1.2.0"
+  }
+}
